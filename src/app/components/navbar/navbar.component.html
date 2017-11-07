@@ -1,3 +1,9 @@
-<p>
-  navbar works!
-</p>
+<div>
+  <h3>Todo App</h3>
+  <div *ngIf="authService.authenticated">
+    <img [src]="authService.currentUser.photoURL">
+    <p>{{authService.currentUser.displayName}}</p>
+    <button (click)="signOut()">Sing Out</button>
+  </div>
+  
+</div>

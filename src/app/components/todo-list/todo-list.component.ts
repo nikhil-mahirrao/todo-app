@@ -1,4 +1,4 @@
-import { TodoService } from './../../services/todo.service';
+import { TodoService } from './../../services/todo/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 

@@ -1,0 +1,7 @@
+<h3>Log In </h3>
+
+<div *ngIf="this.authService.user == null">
+  <p>Please login. {{this.authService.user}}</p>
+  <button (click)="login()">Login with Google</button>
+</div>
+
