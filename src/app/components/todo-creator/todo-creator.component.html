@@ -1,18 +1,13 @@
-<h6> Create Todo:</h6>
-<form (ngSubmit)="addTodo()" #todoForm="ngForm">
-  <div class="form-row">
-    <div class="col-auto">
-      <input 
-        type="text" 
-        class="form-control" 
-        placeholder="Description" 
-        id="description" 
-        name="description"
-        [(ngModel)]="todo" 
-        #description="ngModel">
-    </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  </div>
+<form class="example-form" (ngSubmit)="addTodo()" #todoForm="ngForm">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" type="text" 
+      class="form-control" 
+      placeholder="Add New Todo" 
+      id="description" 
+      name="description"
+      [(ngModel)]="todo" 
+      #description="ngModel">      
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Create</button>
+    
 </form>

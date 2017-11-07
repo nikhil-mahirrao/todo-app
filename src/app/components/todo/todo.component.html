@@ -1,5 +1,5 @@
-<p>
-  {{todo.payload.node_.value_}}
-  <button
-  (click)="deleteTodo(todo.key)">DELETE</button>
-</p>
+<mat-card>
+    <mat-card-content>{{todo.payload.node_.value_}}</mat-card-content>
+    <button mat-raised-button color="warn"
+    (click)="deleteTodo(todo.key)">DELETE</button>
+</mat-card>

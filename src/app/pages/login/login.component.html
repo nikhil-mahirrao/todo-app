@@ -1,7 +1,9 @@
-<h3>Log In </h3>
-
-<div *ngIf="this.authService.user == null">
-  <p>Please login. {{this.authService.user}}</p>
-  <button (click)="login()">Login with Google</button>
-</div>
-
+<mat-card>
+    
+  <mat-card-title>SIGN IN</mat-card-title>
+  <mat-card-header *ngIf="this.authService.currentUser == null">
+    <button mat-raised-button color="warn" 
+    (click)="login()">SIGN IN WITH GOOGLE</button>
+  </mat-card-header>
+    
+</mat-card>
