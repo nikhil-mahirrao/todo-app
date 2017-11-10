@@ -1,5 +1,6 @@
 <app-todo-creator></app-todo-creator>
-
-  <app-todo *ngFor='let todo of todos'
-      [todo]="todo">
-  </app-todo>
+<ul class="todo list-group">
+    <app-todo *ngFor='let todo of todos'
+        [todo]="todo">
+    </app-todo>
+</ul>

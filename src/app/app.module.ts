@@ -1,12 +1,6 @@
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { environment } from './../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,6 +9,9 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SplitButtonModule, ButtonModule} from 'primeng/primeng';
 
 import { todoRoutes } from './configs/todo-routes';
 
@@ -25,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoCreatorComponent } from './components/todo-creator/todo-creator.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +33,7 @@ import { TodoCreatorComponent } from './components/todo-creator/todo-creator.com
     TodoCreatorComponent,
     LoginComponent,
     DashboardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,11 +42,7 @@ import { TodoCreatorComponent } from './components/todo-creator/todo-creator.com
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,

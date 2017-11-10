@@ -1,9 +1,16 @@
-<mat-card>
-    
-  <mat-card-title>SIGN IN</mat-card-title>
-  <mat-card-header *ngIf="this.authService.currentUser == null">
-    <button mat-raised-button color="warn" 
-    (click)="login()">SIGN IN WITH GOOGLE</button>
-  </mat-card-header>
-    
-</mat-card>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="panel panel-info">
+        <div class="panel-heading"><h3>SIGN IN</h3></div>
+        <div class="panel-body" >
+          <div class="btn-group-vertical text-center" *ngIf="this.authService.currentUser == null">
+            <button class="btn btn-primary" (click)="login()">SIGN IN WITH GOOGLE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+</div>

@@ -1,5 +1,70 @@
-<mat-card>
-    <mat-card-content>{{todo.payload.node_.value_}}</mat-card-content>
-    <button mat-raised-button color="warn"
-    (click)="deleteTodo(todo.key)">DELETE</button>
-</mat-card>
+<li class="list-group-item clearfix todo">
+    <div *ngIf="!isEditMode">
+        <div 
+            class="pull-left todo-text"
+            [ngClass]="{'todo-complete': todo.data.status == 'complete'}">{{todo.data.task}}
+        </div >
+        <ul class="pull-right">
+            
+            <li class="pull-left" *ngIf="todo.data.status != 'complete'">
+                <button 
+                    type="button" 
+                    class="btn btn-success "
+                    (click)="completeTodo(todo.key,todo.data.task)">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                </button>
+            </li>
+
+            <li class="pull-left" *ngIf="todo.data.status != 'complete'">
+                <button 
+                    type="button" 
+                    class="btn btn-primary "
+                    (click)="toggleEditMode()">
+                        <i class="glyphicon glyphicon-edit"></i>
+                </button>
+            </li>
+            
+            <li class="pull-left">
+                <button 
+                    type="button" 
+                    class="btn btn-danger "
+                    (click)="deleteTodo(todo.key)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </li>    
+        </ul>
+    </div>
+    <div *ngIf="isEditMode">
+        <form 
+            class="clearfix  panel panel-default " 
+            (ngSubmit)="updateTodo(editTodoData.key,editTodoData.data.task)" 
+            #todoForm="ngForm">
+            
+            <div class="input-group panel-heading">
+                
+                <input type="text" 
+                    placeholder="Add New Todo" 
+                    id="todo" 
+                    name="todo"
+                    [(ngModel)]="editTodoData.data.task" 
+                    class="form-control"
+                    #description="ngModel">
+                    
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-success" 
+                            type="submit">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                        <button 
+                            class="btn btn-default btn-danger" 
+                            (click)="toggleEditMode()">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </span>
+
+            </div><!-- /input-group -->
+        </form>
+    </div>  
+</li>
+
+

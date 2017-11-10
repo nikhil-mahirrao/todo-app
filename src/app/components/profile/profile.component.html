@@ -1,0 +1,10 @@
+<div class="profile text-center">
+  <div *ngIf="authService.authenticated">
+      <img 
+      class="img-rounded"
+      [src]="authService.currentUser.photoURL" 
+      alt="{{authService.currentUser.displayName}}">
+    
+    <h3>{{authService.currentUser.displayName}}</h3>
+  </div>
+</div>

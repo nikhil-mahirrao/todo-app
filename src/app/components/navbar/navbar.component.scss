@@ -1,3 +1,10 @@
-img{
-    max-width: 100px;
+.user-info{
+    float: right;
+    
+    img{
+        max-width: 30px;
+    }
+    *{
+        float: left;
+    }
 }

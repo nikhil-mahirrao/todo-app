@@ -1,13 +1,24 @@
-
-<mat-card>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">Todo App</a>
+    </div>
+    <div 
+      class='user-info' 
+      *ngIf="authService.authenticated">
+      
+      <img 
+        class="img-rounded"
+        [src]="authService.currentUser.photoURL" 
+        alt="{{authService.currentUser.displayName}}">
+      
+      <p>{{authService.currentUser.displayName}}</p>
+      
+      <button 
+        (click)="signOut()">SIGN OUT
+      </button>
     
-  <mat-card-title>TODO APP</mat-card-title>
-  <mat-card-header *ngIf="authService.authenticated">
-    <img mat-card-avatar [src]="authService.currentUser.photoURL" alt="{{authService.currentUser.displayName}}">
-    <mat-card-title>{{authService.currentUser.displayName}}</mat-card-title>
-    <button mat-raised-button color="warn" 
-    (click)="signOut()">SIGN OUT</button>
-  </mat-card-header>
-    
-</mat-card>
+    </div>
+  </div>
+</nav>
 

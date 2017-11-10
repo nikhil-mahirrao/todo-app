@@ -38,8 +38,8 @@ export class AuthService {
   private socialSignIn(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) =>  {
-          this.authState = credential.user
-          //this.updateUserData()
+        this.authState = credential.user
+        //this.updateUserData()
       })
       .catch(error => console.log(error));
   }

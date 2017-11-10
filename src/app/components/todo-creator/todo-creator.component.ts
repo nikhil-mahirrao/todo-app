@@ -17,7 +17,13 @@ export class TodoCreatorComponent implements OnInit {
   }
 
   addTodo(){
-    this.todoService.addTodo(this.todo);
+
+    let newData = {
+      task : this.todo,
+      status: 'incomplete'
+    }
+
+    this.todoService.addTodo(newData);
     this.todo = "";
   }
 }

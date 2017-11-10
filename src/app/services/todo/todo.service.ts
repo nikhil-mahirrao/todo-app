@@ -12,7 +12,7 @@ export class TodoService {
    }
 
   getData(){
-     return this.db.list(this.datapath);
+     return this.db.object(this.datapath);
   }
 
   deteleTodo(deleteKey)
@@ -20,8 +20,14 @@ export class TodoService {
     return this.db.list(this.datapath).remove(deleteKey);
   }
 
-  addTodo(data){
-    console.log(data);
-    return this.db.list(this.datapath).push(data);
-  }  
+  addTodo(newData){
+    //console.log(newData);
+    return this.db.list(this.datapath).push(newData);
+  } 
+  
+  updateTodo(key, newData){
+    //console.log(key);
+    //console.log(newData);
+    return this.db.list(this.datapath).set(key, newData);
+  } 
 }

@@ -1,0 +1,37 @@
+.todo{
+    margin-bottom: 10px;
+    .todo-text{
+        line-height: 30px;
+        padding: 5px;
+    }
+    .todo-complete{
+        text-decoration: line-through;
+    }
+
+    .is-editable{
+        border: 1px gray solid;
+        padding: 5px 10px;
+        width: 70%;
+    }
+
+    li{
+        padding: 0;
+        margin-bottom: 10px; 
+        ul{
+            li{
+                padding: 5px;
+                margin-bottom: 0px;
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .panel{
+            margin-bottom: 0px;
+        }
+        &:last-child{
+            margin-bottom: 10px;
+        }
+    }   
+}
