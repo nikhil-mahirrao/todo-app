@@ -13,13 +13,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class TodoListComponent implements OnInit {
 
   todos:any;
+  todoSubscription;
+
   constructor(private todoService:TodoService) {
-    //this.todoService()
    }
 
   ngOnInit() {
-
-    this.todoService.getData()
+    
+    this.todoSubscription = this.todoService.getData()
     .snapshotChanges()
     .map(todos => {
       let mapTodo = [];
@@ -29,20 +30,15 @@ export class TodoListComponent implements OnInit {
           data: todos.payload.val()[key]
         });
       }
-      
-      console.log(mapTodo);
-      
       return mapTodo;      
     })
     .subscribe(todos =>{
-      //console.log(todos.payload.val());
-      //console.log(todos.key)
-      //console.log(todos.type)
-
-      //console.log(todos);
       this.todos = todos;
-      //console.log(this.todos);
     })
+  }
+
+  ngOnDestroy(){
+    this.todoSubscription.unsubscribe();
   }
 
 }

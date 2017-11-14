@@ -6,5 +6,15 @@
       alt="{{authService.currentUser.displayName}}">
     
     <h3>{{authService.currentUser.displayName}}</h3>
+
+    <div *ngIf='groupTodos'>      
+      <i class="glyphicon glyphicon-edit"></i>
+      {{groupTodos.incomplete.length}} Pending Task
+    </div>
+    <div *ngIf='groupTodos'>      
+      <i class="glyphicon glyphicon-check"></i>
+      {{groupTodos.complete.length}} Completed Task
+    </div>
+    
   </div>
 </div>

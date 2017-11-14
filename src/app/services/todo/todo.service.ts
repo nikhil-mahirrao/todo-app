@@ -21,13 +21,10 @@ export class TodoService {
   }
 
   addTodo(newData){
-    //console.log(newData);
     return this.db.list(this.datapath).push(newData);
   } 
   
   updateTodo(key, newData){
-    //console.log(key);
-    //console.log(newData);
     return this.db.list(this.datapath).set(key, newData);
   } 
 }

@@ -38,7 +38,7 @@
         <form 
             class="clearfix  panel panel-default " 
             (ngSubmit)="updateTodo(editTodoData.key,editTodoData.data.task)" 
-            #todoForm="ngForm">
+            #todoEditForm="ngForm">
             
             <div class="input-group panel-heading">
                 
@@ -48,11 +48,13 @@
                     name="todo"
                     [(ngModel)]="editTodoData.data.task" 
                     class="form-control"
-                    #description="ngModel">
+                    #description="ngModel"
+                    required>
                     
                     <span class="input-group-btn">
                         <button class="btn btn-default btn-success" 
-                            type="submit">
+                            type="submit"
+                            [disabled]="todoEditForm.invalid">
                             <i class="glyphicon glyphicon-ok"></i>
                         </button>
                         <button 

@@ -1,0 +1,25 @@
+.chat-box{
+    border: 1px blue solid;
+    position: fixed;
+    height: 200px;
+    width: 300px;
+    bottom: 0;
+    right: 50px;
+
+
+    .header{
+        height: 20px;
+        background-color: blue;
+        color: white;
+    }
+
+    .message-box{
+        height: 150px;
+        background-color: red;
+    }
+
+    .input-box{
+        height: 30px;
+        background-color: pink;
+    }
+}

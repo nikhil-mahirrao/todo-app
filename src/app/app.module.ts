@@ -23,6 +23,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoCreatorComponent } from './components/todo-creator/todo-creator.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ChatBoxComponent } from './components/chat-box/chat-box.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     DashboardComponent,
     ProfileComponent,
+    ChatBoxComponent,
   ],
   imports: [
     BrowserModule,

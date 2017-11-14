@@ -2,16 +2,25 @@
     <div class="col-lg-12 ">
         <form class="clearfix  panel panel-default " (ngSubmit)="addTodo()" #todoForm="ngForm">
           <div class="input-group panel-heading">
+            
             <input type="text" 
               placeholder="Add New Todo" 
               id="todo" 
-              name="todo"
+              name="todoName"
               [(ngModel)]="todo" 
               class="form-control"
+              required
               #description="ngModel">
+              
             <span class="input-group-btn">
-              <button class="btn btn-default btn-success" type="submit"><i class="glyphicon glyphicon-plus"></i></button>
+              <button 
+                class="btn btn-default btn-success" 
+                [disabled]=todoForm.invalid 
+                type="submit">
+                  <i class="glyphicon glyphicon-plus"></i>
+              </button>
             </span>
+          
           </div><!-- /input-group -->
         </form>
     </div><!-- /.col-lg-6 -->
