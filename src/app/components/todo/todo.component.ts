@@ -26,7 +26,7 @@ export class TodoComponent implements OnInit {
   }
 
   toggleEditMode(){
-    this.editTodoData = Object.assign({}, this.todo);
+    this.editTodoData = JSON.parse(JSON.stringify(this.todo));
     this.isEditMode = !this.isEditMode;
   }
 
